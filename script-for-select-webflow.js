@@ -85,7 +85,6 @@ $(function(){
       el.classList.remove('active');
     });
     navlinks[i].className += ' active';
-    //toggle.text(text);
     toggle.text(options[i].text);
     options[i].selected = true;
   }
