@@ -81,9 +81,8 @@ $(function(){
   
   $(document).on('click', '.btn-brif', function(){
     let index = Number($(this).attr('data-index'))+1;
-    if(index < $('.row-serv').length){
-      brifBtn($(this), index);
-    } else {
+    brifBtn($(this), index);
+    if(index == 0) { // Custom
       clear();
     }
   });
