@@ -64,8 +64,6 @@ $(function(){
   
   $(document).on('click', '.link-main-serv', function(){
     let index = Number($(this).attr('data-index'))+1;
-    //let text = $(this).text();
-    //toggle.text(text);
     toggle.text(options[index].text);
     if(navlinks[index].dataset.index == index){
       navlinks[index].className += ' active';
@@ -73,23 +71,16 @@ $(function(){
     options[index].selected = true;
   });
   
-  /*
-  $('.btn-brif').each(function(i){
-    $(this).attr('data-index', i);
-  });
-  */
-  
   $(document).on('click', '.btn-brif', function(){
     let index = Number($(this).attr('data-index'))+1;
-    brifBtn($(this), index);
     if(index == 0) { // Custom
       clear();
     }
+    brifBtn($(this), index);
   });
   
   function brifBtn(obj, i){
     let text = obj.closest('.column-text').children('h3').text();
-
     [].forEach.call(navlinks, function(el) {
       el.classList.remove('active');
     });
