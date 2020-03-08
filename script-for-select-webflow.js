@@ -54,10 +54,12 @@ $(function(){
   
   $(document).on('click', '.close-out', function(){
     clear();
+    $('.dropdown-list').hide('w--open');
   });
   
   $(document).on('click', '.close', function(){
     clear();
+    $('.dropdown-list').hide('w--open');
   });
   
   let navlinks = document.getElementsByClassName('dropdown-link');
@@ -73,7 +75,7 @@ $(function(){
   
   $(document).on('click', '.btn-brif', function(){
     let index = Number($(this).attr('data-index'))+1;
-    if(index == -1) { // Custom
+    if(index == -1 || index === undefined) { // Custom
       clear();
     }
     brifBtn($(this), index);
