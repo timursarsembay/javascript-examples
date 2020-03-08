@@ -73,7 +73,7 @@ $(function(){
   
   $(document).on('click', '.btn-brif', function(){
     let index = Number($(this).attr('data-index'))+1;
-    if(index == 0) { // Custom
+    if(index == -1) { // Custom
       clear();
     }
     brifBtn($(this), index);
