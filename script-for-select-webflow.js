@@ -54,12 +54,10 @@ $(function(){
   
   $(document).on('click', '.close-out', function(){
     clear();
-    $('.dropdown-list').hide('w--open');
   });
   
   $(document).on('click', '.close', function(){
     clear();
-    $('.dropdown-list').hide('w--open');
   });
   
   let navlinks = document.getElementsByClassName('dropdown-link');
@@ -94,6 +92,7 @@ $(function(){
   function clear(){
     dropdownFilling(nav, options, toggle);
     options[0].selected = true;
+    $('.dropdown-list').hide('w--open');
   }
   
 });
