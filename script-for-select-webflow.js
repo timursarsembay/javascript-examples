@@ -49,7 +49,7 @@ $(function(){
   });
   
   $('.dropdown.w-dropdown').click(function(){
-  	$('.dropdown-list').toggle();
+    $('.dropdown-list').toggle();
   });
   
   $(document).on('click', '.close-out', function(){
