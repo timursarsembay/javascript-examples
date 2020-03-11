@@ -55,7 +55,7 @@ $(function(){
   
   $(document).on('click', '.close-out, .close', function(){
     clear();
-    $('.dropdown-toggle').css({'color': '#bdbdbd','border-bottom': '2px solid #bdbdbd'});
+    $('.dropdown-toggle').removeAttr('style');
   });
   
   let navlinks = document.getElementsByClassName('dropdown-link');
