@@ -18,11 +18,11 @@ $(function(){
   let options = select.find('option');
   let mainlinks = $('.link-main-serv');
   
-  mainlinks.each(function(i){
-    $(this).attr('data-index', i);
-  });
   function dropdownFilling(nav, options, toggle){
     nav.html('');
+    mainlinks.each(function(i){
+      $(this).attr('data-index', i);
+    });
     options.each(function(i){
       let value = $(this).val();
       let text = $(this).text();
@@ -33,7 +33,6 @@ $(function(){
       nav.append(html);
     });
   }
-  dropdownFilling(nav, options, toggle);
   
   $(document).on('click', '.dropdown-link.w-dropdown-link', function(){
     let value = $(this).attr('data-value');
@@ -94,11 +93,7 @@ $(function(){
     options[0].selected = true;
 	$('.dropdown-list').hide('w--open');
   }
+	
+  dropdownFilling(nav, options, toggle);
   
-});
-
-$(document).on('click', '.map', function (){ 
-    var html = '<?= get_field('karta', 'option') ?>';
-    $(this).html(html);
-    
 });
