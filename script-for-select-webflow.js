@@ -17,6 +17,7 @@ $(function(){
   let nav = dropdown.children('.dropdown-list.w-dropdown-list');
   let options = select.find('option');
   let mainlinks = $('.link-main-serv');
+  let navlinks = document.getElementsByClassName('dropdown-link');
   
   function dropdownFilling(nav, options, toggle){
     nav.html('');
@@ -56,8 +57,6 @@ $(function(){
     clear();
     $('.dropdown-toggle').removeAttr('style');
   });
-  
-  let navlinks = document.getElementsByClassName('dropdown-link');
   
   $(document).on('click', '.link-main-serv', function(){
     let index = Number($(this).attr('data-index'))+1;
