@@ -41,6 +41,7 @@ $(function(){
     let index = $(this).attr('data-index');
     options[index].selected = true;
     toggle.text(text);
+    $('.dropdown-toggle').css({'color': '#bdbdbd','border-bottom': '2px solid #221156'});
     $('.dropdown-link.w-dropdown-link').each(function(){
     	$(this).removeClass('active');
     });
@@ -49,15 +50,12 @@ $(function(){
   });
   
   $('.dropdown.w-dropdown').click(function(){
-    $('.dropdown-list').toggle();
+  	$('.dropdown-list').toggle();
   });
   
-  $(document).on('click', '.close-out', function(){
+  $(document).on('click', '.close-out, .close', function(){
     clear();
-  });
-  
-  $(document).on('click', '.close', function(){
-    clear();
+    $('.dropdown-toggle').css({'color': '#bdbdbd','border-bottom': '2px solid #bdbdbd'});
   });
   
   let navlinks = document.getElementsByClassName('dropdown-link');
@@ -65,6 +63,7 @@ $(function(){
   $(document).on('click', '.link-main-serv', function(){
     let index = Number($(this).attr('data-index'))+1;
     toggle.text(options[index].text);
+    $('.dropdown-toggle').css({'color': '#bdbdbd','border-bottom': '2px solid #221156'});
     if(navlinks[index].dataset.index == index){
       navlinks[index].className += ' active';
     }
@@ -86,13 +85,20 @@ $(function(){
     });
     navlinks[i].className += ' active';
     toggle.text(options[i].text);
+    $('.dropdown-toggle').css({'color': '#bdbdbd','border-bottom': '2px solid #221156'});
     options[i].selected = true;
   }
   
   function clear(){
     dropdownFilling(nav, options, toggle);
     options[0].selected = true;
-    $('.dropdown-list').hide('w--open');
+	$('.dropdown-list').hide('w--open');
   }
   
+});
+
+$(document).on('click', '.map', function (){ 
+    var html = '<?= get_field('karta', 'option') ?>';
+    $(this).html(html);
+    
 });
