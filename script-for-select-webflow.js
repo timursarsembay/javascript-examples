@@ -41,7 +41,7 @@ $(function(){
     let index = $(this).attr('data-index');
     options[index].selected = true;
     toggle.text(text);
-    $('.dropdown-toggle').css({'color': '#bdbdbd','border-bottom': '2px solid #221156'});
+    $('.dropdown-toggle').css({'color': '#221156','border-bottom': '2px solid #221156'});
     $('.dropdown-link.w-dropdown-link').each(function(){
     	$(this).removeClass('active');
     });
@@ -61,7 +61,7 @@ $(function(){
   $(document).on('click', '.link-main-serv', function(){
     let index = Number($(this).attr('data-index'))+1;
     toggle.text(options[index].text);
-    $('.dropdown-toggle').css({'color': '#bdbdbd','border-bottom': '2px solid #221156'});
+    $('.dropdown-toggle').css({'color': '#221156','border-bottom': '2px solid #221156'});
     if(navlinks[index].dataset.index == index){
       navlinks[index].className += ' active';
     }
@@ -83,7 +83,7 @@ $(function(){
     });
     navlinks[i].className += ' active';
     toggle.text(options[i].text);
-    $('.dropdown-toggle').css({'color': '#bdbdbd','border-bottom': '2px solid #221156'});
+    $('.dropdown-toggle').css({'color': '#221156','border-bottom': '2px solid #221156'});
     options[i].selected = true;
   }
   
