@@ -38,4 +38,5 @@ jQuery(document).ready(function($){
   function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   }
+  calc();
 });
