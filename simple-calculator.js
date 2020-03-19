@@ -8,10 +8,10 @@ jQuery(document).ready(function($){
     var val = $(this).val();
     if(!(val >= 1)){
     	$(this).val('1');
+    }else{
+      calc();
     }    
   });
-  calc();
-  $('#calculator input').on('change input', function(){ calc(); });
   function calc(){
     var quantity = parseInt($('.quantity').val());
     if(quantity){
@@ -34,9 +34,8 @@ jQuery(document).ready(function($){
     $('.price-connect-3').html(numberWithSpaces(price5years));
     $('.discount-5y').html(discount5years); 
     }   
-}
-function numberWithSpaces(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-}
-  
-})
+  }
+  function numberWithSpaces(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  }
+});
